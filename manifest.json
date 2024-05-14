@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Allow Right Click and Text Select",
+  "version": "1.0",
+  "description": "Always allow right-click and text selection even if overridden by the web designer.",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
